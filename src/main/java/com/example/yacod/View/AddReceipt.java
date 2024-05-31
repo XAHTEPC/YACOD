@@ -70,6 +70,7 @@ public class AddReceipt {
             type.setText("Юридическое лицо");
         } else {
             type.setText("Физическое лицо");
+        }
         type.setEditable(false);
         type.setBackground(null);
         type.setFont(Font.font("STXihei", 16));
@@ -176,9 +177,7 @@ public class AddReceipt {
         newWindow.setTitle("Добавление Физ лица");
         newWindow.setScene(scene_add);
         newWindow.show();
-
     }
-}
     public static void addPos(ReceiptServ receiptServ) throws FileNotFoundException {
         arrayList.add(receiptServ);
         Pane pane = new Pane();
