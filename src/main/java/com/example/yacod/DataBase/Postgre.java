@@ -451,6 +451,12 @@ public class Postgre {
                 "\tWHERE id_empl = '"+id_empl+"';");
         statmt.execute("DELETE FROM public.\"Employee\"\n" +
                 "\tWHERE id_empl = '"+id_empl+"';");
+        data_resSet = statmt.executeQuery("SELECT * FROM public.\"User\" WHERE id_empl = '"+id_empl+"';");
+        String login = "";
+        while (data_resSet.next()){
+            login = data_resSet.getString("login_user");
+        }
+        statmt.execute("DROP ROLE IF EXISTS \""+login+"\";\n");
     }
 
     public static void makeTMP() throws SQLException {
